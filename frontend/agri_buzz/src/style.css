@@ -1,0 +1,212 @@
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+.search-form { 
+  padding-top: 10px;
+  background-color: #2c3e50;
+  margin: 0;  
+  overflow: hidden;
+}
+
+.search-input {
+  width: 20rem; 
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+}
+
+.navbar {
+  background-color: #2c3e50;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  justify-content: space-between;
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+
+.nav-menu a:hover {
+  transform: scale(1.05);
+  transition: color 0.3s ease;
+}
+
+/* Dropdown */
+.dropdown-menu {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  background-color: #2c3e50 !important; 
+  list-style: none;
+  padding: 10px 0;
+  display: none;
+  min-width: 150px;
+  border-radius: 4px;
+  border: none !important;  
+  z-index: 10;
+}
+
+.dropdown-menu a {
+  padding: 10px 20px;
+  color: white;
+  text-align: center;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.cart-icon {
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.icons-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Hamburger Styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.hamburger .bar {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive */
+@media (max-width: 769px) {
+  .nav-menu {
+    width: 150px;
+    position: absolute;
+    top: 53px;
+    right: 0;
+    flex-direction: column;
+    background-color: #2c3e50;    
+    display: none;
+    padding: 1px;
+    gap: 1px;
+    text-align: center;
+    border-radius: 0 0 5px 5px;
+  }
+  
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .dropdown-menu {    
+    position: static;
+    background-color: #2c3e50;
+    display: none;
+    min-width: 149px !important;
+    border-radius: 0;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  /* For each navbar item dropdown */
+  .dropdown-home .dropdown-menu {
+    display: none;
+  }
+  
+  .dropdown-home.open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-fertilizer .dropdown-menu {
+    display: none;
+  }
+  
+  .dropdown-fertilizer.open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-seeds .dropdown-menu {
+    display: none;
+  }
+  
+  .dropdown-seeds.open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-labour .dropdown-menu {
+    display: none;
+  }
+  
+  .dropdown-labour.open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-crops .dropdown-menu {
+    display: none;
+  }
+
+  .dropdown-crops.open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-pesticides .dropdown-menu {
+    display: none;
+  }
+
+  .dropdown-pesticides.open .dropdown-menu {
+    display: block;
+  }
+}
