@@ -1,26 +1,24 @@
-import React from 'react'
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Home from "./pages/Home";
-// import About from "./pages/About";
-// import Services from "./pages/Services";
-// import Contact from "./pages/Contact";
+import Home from "./pages/Home";
+import Fertilizer from "./pages/Fertilizer";
+import Organic from "./pages/Organic"; // Import Organic page
 import Layout from "./Layout";
+import Chemical from "./pages/Chemical";
 
 const App = () => {
   return (
-    <>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          {/* <Route index element={<Home />} /> */}
-          {/* <Route path="about" element={<About />} />
-          <Route path="services" element={<Services />} />
-          <Route path="contact" element={<Contact />} /> */}
+          <Route index element={<Home />} />
+          <Route path="fertilizer" element={<Fertilizer />} />
+          <Route path="fertilizer/organic" element={<Organic />} />
+          <Route path="fertilizer/chemical" element={<Chemical />} />
         </Route>
       </Routes>
     </BrowserRouter>
-    </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
