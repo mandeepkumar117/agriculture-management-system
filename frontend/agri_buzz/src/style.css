@@ -126,6 +126,14 @@ body {
 }
 
 /* Responsive */
+@media(max-width:2561px){
+  .search-form{
+    margin: 0;    
+  }
+  .navbar{
+    margin: 0 0 0 0;
+  }
+}
 @media (max-width: 769px) {
   .nav-menu {
     width: 150px;
