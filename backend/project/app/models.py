@@ -63,5 +63,96 @@ class IrrigationItem(models.Model):
     updated_at = models.DateTimeField(auto_now=True)      
     manufacturer = models.CharField(max_length=100)
     dealer= models.CharField(max_length=100) 
+
+
+class owner(models.Model):
+    owner_id = models.CharField(primary_key=True)
+    name = models.CharField(max_length=100)
+    contact= models.IntegerField()
+    
+    address = models.CharField(max_length=100)
+
+class machinery(models.Model):
+    machine_id= models.CharField(primary_key=True)
+    owner= models.ForeignKey(owner, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    type = models.CharField(max_length=100)
+    specifications = models.CharField(max_length=200)
+    usage = models.CharField(max_length=200)
+    manufacturer = models.CharField(max_length=100)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    dealer= models.CharField(max_length=100)    
+
+
+
+class rent_machinery(models.Model):
+    machine_no= models.ForeignKey(machinery, on_delete=models.CASCADE)
+    machinename= models.CharField(max_length=20)
+    
+    machine_type = models.CharField(max_length=30)
+    charge = models.CharField()
+    status= models.CharField(max_length=50)
+class hiredMachinery(models.Model):
+    machine_no= models.ForeignKey(machinery, on_delete=models.CASCADE)
+    username= models.CharField(max_length=20)
+    contact= models.IntegerField()
+    machine_name = models.CharField(max_length=30)
+    hired_date = models.DateField()
+    useraddress= models.CharField(max_length=50)
+    
+class labour_registration(models.Model):
+    labour_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100)
+    contact = models.IntegerField()
+    
+    adharno = models.IntegerField(unique=True)
+    worktype = models.CharField(max_length=100)
+    address = models.CharField(max_length=200)
+    
+class  hired_labour(models.Model):
+
+    username= models.CharField(max_length=20)
+    NumberOfLabour= models.IntegerField()
+    worktype = models.CharField(max_length=100)
+    hired_date = models.DateField()
+    address= models.CharField(max_length=50)
+    
+class dealer_registration(models.Model):
+    dealer_id = models.CharField(primary_key=True)
+    name = models.CharField(max_length=100)
+    contact = models.IntegerField()
+    GstNo = models.CharField(max_length=15,unique=True)
+
+    address = models.CharField(max_length=100)
+
+
+class sales_report(models.Model):
+    dealer_id= models.ForeignKey(dealer_registration, on_delete=models.CASCADE)
+    name= models.CharField(max_length=30)
+    product_type= models.CharField(max_length=30)
+    total_sales= models.IntegerField()
+
+class cart(models.Model):
+    product_id = models.IntegerField()
+    product_name = models.CharField(max_length=100)
+    quantity = models.IntegerField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    total_price = models.DecimalField(max_digits=10, decimal_places=2)
+    dealername = models.CharField ()
+
+
+class login(models.Model):
+    username = models.CharField(max_length=100, primary_key=True)
+    password = models.CharField(max_length=100)
+
+class registration(models.Model):
+    username = models.CharField(max_length=100, primary_key=True)
+    
+    email = models.EmailField(max_length=100, unique=True)
+    phone_number = models.IntegerField()
+    password = models.CharField(max_length=200)
+    cpassword = models.IntegerField()
+ 
+
     
 
