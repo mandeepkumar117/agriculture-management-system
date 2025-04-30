@@ -6,6 +6,7 @@ class fertilizer(models.Model):
     name = models.CharField(max_length=100)
     fertilizer_type = models.CharField(max_length=100)
     nutrients= models.CharField(max_length=200)
+    image=models.ImageField(upload_to='images')
     usage= models.CharField(max_length=200)
     application_method= models.CharField(max_length=200)
     dosage= models.CharField(max_length=200)
@@ -32,7 +33,7 @@ class seeds(models.Model):
     harvest_time = models.CharField(max_length=200)
     yield_per_hectare = models.DecimalField(max_digits=10, decimal_places=2)
     dealer= models.CharField(max_length=100)
-
+    image=models.ImageField(upload_to='images')
     price = models.DecimalField(max_digits=10, decimal_places=2)
 
 class pesticide(models.Model):
@@ -43,6 +44,7 @@ class pesticide(models.Model):
     suitablecrop = models.CharField(max_length=200)
     application_method = models.CharField(max_length=200)
     precautions = models.CharField(max_length=200)
+    image=models.ImageField(upload_to='images')
     quantity = models.CharField(max_length=200)
     image = models.ImageField(upload_to='irrigation_items/', null=True, blank=True)
     
@@ -58,7 +60,7 @@ class IrrigationItem(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)   # Price of item
     stock = models.PositiveIntegerField()              # How many items available
     category = models.CharField(max_length=50)         # e.g., Drip, Sprinkler, Pipes
-    image = models.ImageField(upload_to='irrigation_items/', null=True, blank=True)  # Item image
+    image = models.ImageField(upload_to='images')  # Item image
 
     updated_at = models.DateTimeField(auto_now=True)      
     manufacturer = models.CharField(max_length=100)
@@ -70,6 +72,7 @@ class owner(models.Model):
     name = models.CharField(max_length=100)
     contact= models.IntegerField()
     
+    
     address = models.CharField(max_length=100)
 
 class machinery(models.Model):
@@ -77,6 +80,7 @@ class machinery(models.Model):
     owner= models.ForeignKey(owner, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     type = models.CharField(max_length=100)
+    image=models.ImageField(upload_to='images')
     specifications = models.CharField(max_length=200)
     usage = models.CharField(max_length=200)
     manufacturer = models.CharField(max_length=100)
@@ -88,13 +92,14 @@ class machinery(models.Model):
 class rent_machinery(models.Model):
     machine_no= models.ForeignKey(machinery, on_delete=models.CASCADE)
     machinename= models.CharField(max_length=20)
-    
+    image=models.ImageField(upload_to='images')
     machine_type = models.CharField(max_length=30)
     charge = models.CharField()
     status= models.CharField(max_length=50)
 class hiredMachinery(models.Model):
     machine_no= models.ForeignKey(machinery, on_delete=models.CASCADE)
     username= models.CharField(max_length=20)
+    image=models.ImageField(upload_to='images')
     contact= models.IntegerField()
     machine_name = models.CharField(max_length=30)
     hired_date = models.DateField()
@@ -104,7 +109,7 @@ class labour_registration(models.Model):
     labour_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     contact = models.IntegerField()
-    
+    image=models.ImageField(upload_to='images')
     adharno = models.IntegerField(unique=True)
     worktype = models.CharField(max_length=100)
     address = models.CharField(max_length=200)
@@ -115,6 +120,7 @@ class  hired_labour(models.Model):
     NumberOfLabour= models.IntegerField()
     worktype = models.CharField(max_length=100)
     hired_date = models.DateField()
+    image= models.ImageField(upload_to='images')
     address= models.CharField(max_length=50)
     
 class dealer_registration(models.Model):
@@ -138,7 +144,9 @@ class cart(models.Model):
     quantity = models.IntegerField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     total_price = models.DecimalField(max_digits=10, decimal_places=2)
+    image=models.ImageField(upload_to='images')
     dealername = models.CharField ()
+
 
 
 class login(models.Model):
