@@ -81,6 +81,7 @@ class Registration(viewsets.ModelViewSet):
     queryset = registration.objects.all()
     serializer_class = stu_serializers15      
 
+#####
          
 
 
