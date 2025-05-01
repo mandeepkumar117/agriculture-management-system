@@ -81,8 +81,18 @@ class Registration(viewsets.ModelViewSet):
     queryset = registration.objects.all()
     serializer_class = stu_serializers15      
 
-#####
          
+class Userdetail(viewsets.ModelViewSet):
+     
+    queryset = userdetail.objects.all()
+    serializer_class = stu_serializers16      
+
+class Admindetail(viewsets.ModelViewSet):
+     
+    queryset = admindetail.objects.all()
+    serializer_class = stu_serializers17      
+
+
 
 
 

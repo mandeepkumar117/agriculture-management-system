@@ -90,3 +90,17 @@ class stu_serializers15(serializers.ModelSerializer):
         model=registration
         
         fields = '__all__'                                         
+
+
+class stu_serializers16(serializers.ModelSerializer):
+    class Meta:
+        model=userdetail
+        
+        fields = '__all__'      
+
+class stu_serializers17(serializers.ModelSerializer):
+    class Meta:
+        model=admindetail
+        
+        fields = '__all__'                                         
+

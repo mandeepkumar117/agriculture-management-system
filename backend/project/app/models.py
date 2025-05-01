@@ -154,13 +154,32 @@ class login(models.Model):
     password = models.CharField(max_length=100)
 
 class registration(models.Model):
-    username = models.CharField(max_length=100, primary_key=True)
+
+    email = models.EmailField(max_length=40, primary_key=True)
+    username = models.CharField(max_length=40)
     
-    email = models.EmailField(max_length=100, unique=True)
+    
     phone_number = models.IntegerField()
     password = models.CharField(max_length=200)
     cpassword = models.IntegerField()
  
+class  userdetail(models.Model):
+   email  = models.ForeignKey(registration, on_delete=models.CASCADE)
+   username = models.CharField(max_length=40)
+   phone_number = models.IntegerField()
+   password = models.CharField(max_length=200)
+
+class admindetail(models.Model):
+    adminname=models.CharField(max_length=30)
+    password=models.CharField(max_length=30)
+
+    
+
+
+
+
+
+
 
     
 
