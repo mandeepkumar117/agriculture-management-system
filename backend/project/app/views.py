@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from rest_framework import viewsets,status
 from .models import *
 from .serializers import *
@@ -7,6 +8,11 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.hashers import check_password
+=======
+from rest_framework import viewsets
+from .models import *
+from .serializers import *
+>>>>>>> a4cd8abfc985100c1ef22abcdbf6d3506a268054
 
 
 # Create your views her
@@ -77,6 +83,7 @@ class Cart(viewsets.ModelViewSet):
      
     queryset = cart.objects.all()
     serializer_class = stu_serializers13
+<<<<<<< HEAD
 
 class Login(viewsets.ViewSet):  # ⚠️ yaha ViewSet use kare ModelViewSet ke jagah
     def create(self, request):
@@ -112,6 +119,18 @@ class Registration(viewsets.ModelViewSet):
         return Response(serializer.data, status=201)
      
 
+=======
+class Login(viewsets.ModelViewSet):
+     
+    queryset = login.objects.all()
+    serializer_class = stu_serializers14  
+
+class Registration(viewsets.ModelViewSet):
+     
+    queryset = registration.objects.all()
+    serializer_class = stu_serializers15      
+
+>>>>>>> a4cd8abfc985100c1ef22abcdbf6d3506a268054
          
 class Userdetail(viewsets.ModelViewSet):
      
@@ -121,6 +140,7 @@ class Userdetail(viewsets.ModelViewSet):
 class Admindetail(viewsets.ModelViewSet):
      
     queryset = admindetail.objects.all()
+<<<<<<< HEAD
     serializer_class = stu_serializers17   
 
 
@@ -131,6 +151,11 @@ class ProtectedViewSet(viewsets.ViewSet):
 
     def list(self, request):
         return Response({"message": f"Welcome {request.user.username}, you accessed protected data!"})
+=======
+    serializer_class = stu_serializers17      
+
+
+>>>>>>> a4cd8abfc985100c1ef22abcdbf6d3506a268054
 
 
 

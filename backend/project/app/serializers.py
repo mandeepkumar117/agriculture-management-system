@@ -1,10 +1,13 @@
 from rest_framework import serializers
 from .models import *
 
+<<<<<<< HEAD
 from rest_framework import generics
 from django.contrib.auth.models import User
 from rest_framework.serializers import ModelSerializer
 
+=======
+>>>>>>> a4cd8abfc985100c1ef22abcdbf6d3506a268054
 
 
 class stu_serializers1(serializers.ModelSerializer):
@@ -108,6 +111,7 @@ class stu_serializers17(serializers.ModelSerializer):
         
         fields = '__all__'                                         
 
+<<<<<<< HEAD
 
 #============================authentication=============================
 
@@ -128,3 +132,5 @@ class UserSerializer(ModelSerializer):
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+=======
+>>>>>>> a4cd8abfc985100c1ef22abcdbf6d3506a268054

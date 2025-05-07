@@ -58,12 +58,17 @@ class IrrigationItem(models.Model):
     stock = models.PositiveIntegerField()              # How many items available
     category = models.CharField(max_length=50)         # e.g., Drip, Sprinkler, Pipes
     image = models.ImageField(upload_to='images')  # Item image
+<<<<<<< HEAD
+=======
+
+>>>>>>> a4cd8abfc985100c1ef22abcdbf6d3506a268054
     updated_at = models.DateTimeField(auto_now=True)      
     manufacturer = models.CharField(max_length=100)
     dealer= models.CharField(max_length=100) 
 
 
 class owner(models.Model):
+<<<<<<< HEAD
     owner_id = models.CharField(primary_key=True,max_length=100)
     name = models.CharField(max_length=100)
     contact= models.IntegerField()
@@ -71,6 +76,17 @@ class owner(models.Model):
 
 class machinery(models.Model):
     machine_id= models.CharField(primary_key=True,max_length=100)
+=======
+    owner_id = models.CharField(primary_key=True)
+    name = models.CharField(max_length=100)
+    contact= models.IntegerField()
+    
+    
+    address = models.CharField(max_length=100)
+
+class machinery(models.Model):
+    machine_id= models.CharField(primary_key=True)
+>>>>>>> a4cd8abfc985100c1ef22abcdbf6d3506a268054
     owner= models.ForeignKey(owner, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     type = models.CharField(max_length=100)
@@ -81,14 +97,24 @@ class machinery(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     dealer= models.CharField(max_length=100)    
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> a4cd8abfc985100c1ef22abcdbf6d3506a268054
 class rent_machinery(models.Model):
     machine_no= models.ForeignKey(machinery, on_delete=models.CASCADE)
     machinename= models.CharField(max_length=20)
     image=models.ImageField(upload_to='images')
     machine_type = models.CharField(max_length=30)
+<<<<<<< HEAD
     charge = models.CharField(max_length=100)
     status= models.CharField(max_length=50)
 
+=======
+    charge = models.CharField()
+    status= models.CharField(max_length=50)
+>>>>>>> a4cd8abfc985100c1ef22abcdbf6d3506a268054
 class hiredMachinery(models.Model):
     machine_no= models.ForeignKey(machinery, on_delete=models.CASCADE)
     username= models.CharField(max_length=20)
@@ -107,7 +133,12 @@ class labour_registration(models.Model):
     worktype = models.CharField(max_length=100)
     address = models.CharField(max_length=200)
     
+<<<<<<< HEAD
 class hired_labour(models.Model):
+=======
+class  hired_labour(models.Model):
+
+>>>>>>> a4cd8abfc985100c1ef22abcdbf6d3506a268054
     username= models.CharField(max_length=20)
     NumberOfLabour= models.IntegerField()
     worktype = models.CharField(max_length=100)
@@ -116,10 +147,18 @@ class hired_labour(models.Model):
     address= models.CharField(max_length=50)
     
 class dealer_registration(models.Model):
+<<<<<<< HEAD
     dealer_id = models.CharField(primary_key=True,max_length=100)
     name = models.CharField(max_length=100)
     contact = models.IntegerField()
     GstNo = models.CharField(max_length=15,unique=True)
+=======
+    dealer_id = models.CharField(primary_key=True)
+    name = models.CharField(max_length=100)
+    contact = models.IntegerField()
+    GstNo = models.CharField(max_length=15,unique=True)
+
+>>>>>>> a4cd8abfc985100c1ef22abcdbf6d3506a268054
     address = models.CharField(max_length=100)
 
 
@@ -136,7 +175,13 @@ class cart(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     total_price = models.DecimalField(max_digits=10, decimal_places=2)
     image=models.ImageField(upload_to='images')
+<<<<<<< HEAD
     dealername = models.CharField (max_length=100)
+=======
+    dealername = models.CharField ()
+
+
+>>>>>>> a4cd8abfc985100c1ef22abcdbf6d3506a268054
 
 class login(models.Model):
     username = models.CharField(max_length=100, primary_key=True)
@@ -145,9 +190,18 @@ class login(models.Model):
 class registration(models.Model):
 
     email = models.EmailField(max_length=40, primary_key=True)
+<<<<<<< HEAD
     username = models.CharField(max_length=40)    
     password = models.CharField(max_length=200)
     cpassword = models.CharField(max_length=200)
+=======
+    username = models.CharField(max_length=40)
+    
+    
+    phone_number = models.IntegerField()
+    password = models.CharField(max_length=200)
+    cpassword = models.IntegerField()
+>>>>>>> a4cd8abfc985100c1ef22abcdbf6d3506a268054
  
 class  userdetail(models.Model):
    email  = models.ForeignKey(registration, on_delete=models.CASCADE)
