@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": "815a",
+      "username": "mandeep",
+      "email": "mandeepkumar4567852@gmail.com",
+      "password": "mandeep@123",
+      "cpassword": "mandeep@123"
+    },
+    {
+      "id": "7290",
+      "username": "rahul",
+      "email": "rahul@gmail.com",
+      "password": "rahul@123",
+      "cpassword": "rahul@123"
+    },
+    {
+      "id": "cc70",
+      "username": "suresh",
+      "email": "suresh@gmail.com",
+      "password": "suresh@123",
+      "cpassword": "suresh@123"
+    }
+  ]
+}

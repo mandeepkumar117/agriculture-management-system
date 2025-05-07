@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import '../style.css';
 
 const Mynavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -121,6 +122,9 @@ const Mynavbar = () => {
               <li><NavLink to="/irrigation/powders" onClick={closeMenu}>Powders</NavLink></li>
             </ul>
           </li>
+          <li><NavLink to="registration" onClick={closeMenu}>Registration</NavLink></li>
+          <li><NavLink to="login" onClick={closeMenu}>Login</NavLink></li>
+          <li><NavLink to="dashbord" onClick={closeMenu}>dashbord</NavLink></li>
         </ul>
 
         <div className="icons-wrapper">
