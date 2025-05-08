@@ -39,12 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'rest_framework',
-<<<<<<< HEAD
     'corsheaders',   
     'rest_framework_simplejwt',
-=======
-     'corsheaders',
->>>>>>> a4cd8abfc985100c1ef22abcdbf6d3506a268054
 ]
 
 MIDDLEWARE = [
@@ -55,7 +51,6 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-<<<<<<< HEAD
     'django.middleware.clickjacking.XFrameOptionsMiddleware',    
     "django.middleware.common.CommonMiddleware",
 ]
@@ -63,16 +58,6 @@ MIDDLEWARE = [
 # CORS_ALLOWED_ORIGINS = [
 #     "http://localhost:5173/",
 # ]
-=======
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "corsheaders.middleware.CorsMiddleware",
-    "django.middleware.common.CommonMiddleware",
-]
-
-CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:9000",
-]
->>>>>>> a4cd8abfc985100c1ef22abcdbf6d3506a268054
 
 CORS_ALLOW_METHODS = (
     "DELETE",
@@ -187,12 +172,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         # 'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
-<<<<<<< HEAD
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ]
 }
 
-=======
-    ]
-}
->>>>>>> a4cd8abfc985100c1ef22abcdbf6d3506a268054
