@@ -17,6 +17,8 @@ class fertilizer(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     stotageinstructions= models.CharField(max_length=200)
     dealer= models.CharField(max_length=100)
+    def __str__(self):
+        return self.name
 
 class seeds(models.Model):
     product_id = models.CharField(primary_key=True,max_length=50)
