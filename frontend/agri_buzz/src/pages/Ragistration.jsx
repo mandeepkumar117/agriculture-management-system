@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const RegistrationForm = () => {
+const RegistrationForm=()=> {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -10,7 +10,7 @@ const RegistrationForm = () => {
   });
 
   const [errors, setErrors] = useState({});
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false); // optional loading state
 
   const handleChange = (e) => {
     setFormData({
@@ -21,28 +21,21 @@ const RegistrationForm = () => {
 
   const validate = () => {
     let newErrors = {};
-
-    if (!formData.username) {
-      newErrors.username = 'Username is required';
-    } else if (/^\d+$/.test(formData.username)) {
-      newErrors.username = 'Username cannot be all numbers';
-    } else if (!/^[a-zA-Z0-9_]+$/.test(formData.username)) {
-      newErrors.username = 'Username can only contain letters, numbers, and underscores';
+    if (!formData.username) newErrors.username = 'Username is required';
+    else if(/^\d+/.test(formData.username)){
+      newErrors.username="User name cannot be all numbers"
     }
-
     if (!formData.email) {
       newErrors.email = 'Email is required';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = 'Email is invalid';
     }
-
-    if (!formData.password) {
-      newErrors.password = 'Password is required';
+    else if (!/^[a-zA-Z0-9_]+$/.test(formData.username)) {
+      newErrors.username = 'Username can only contain letters, numbers, and underscores';
     }
-
-    if (formData.password !== formData.cpassword) {
+    if (!formData.password) newErrors.password = 'Password is required';
+    if (formData.password !== formData.cpassword)
       newErrors.cpassword = 'Passwords do not match';
-    }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -53,8 +46,8 @@ const RegistrationForm = () => {
     if (validate()) {
       try {
         setLoading(true);
-        const { cpassword, ...submitData } = formData; // exclude cpassword from API payload
-        const response = await axios.post('http://127.0.0.1:8000/registration/', submitData);
+        // Send form data to the JSON Server API
+        const response = await axios.post('http://127.0.0.1:8000/registration/', formData);
         console.log('Registration successful:', response.data);
         alert('Registration Successful!');
         setFormData({
@@ -131,6 +124,6 @@ const RegistrationForm = () => {
       </form>
     </div>
   );
-};
+}
 
 export default RegistrationForm;

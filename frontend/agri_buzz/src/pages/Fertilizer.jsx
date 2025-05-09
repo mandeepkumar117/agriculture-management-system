@@ -37,7 +37,7 @@ const FertilizerForm = () => {
         });
 
         try {
-            await axios.post('http://localhost:8000/fertilizers/', data, {
+            await axios.post('http://localhost:8000/api/fertilizers/', data, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             });
             alert('Fertilizer submitted successfully!');
