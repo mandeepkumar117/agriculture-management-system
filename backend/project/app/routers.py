@@ -27,5 +27,6 @@ router.register(r'registration', Registration)
 router.register(r'userdetail', Userdetail)
 router.register(r'admindetail', Admindetail)
 
+
 router.register(r'protected-route', ProtectedViewSet, basename='protected')
 #######

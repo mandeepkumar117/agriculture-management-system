@@ -97,19 +97,21 @@ class Registration(viewsets.ModelViewSet):
     queryset = registration.objects.all()
     serializer_class = stu_serializers15      
 
-    def create(self, request, *args, **kwargs):
-        data = request.data.copy()        
-        username = data.get('username')
-        email = data.get('email')
-        password = data.get('password')        
-        if not User.objects.filter(username=username).exists():
-            User.objects.create_user(username=username, email=email, password=password)        
-        data['password'] = make_password(password)
-        serializer = self.get_serializer(data=data)
-        serializer.is_valid(raise_exception=True)
-        self.perform_create(serializer)
+    # def create(self, request, *args, **kwargs):
+    #     data = request.data.copy()        
+    #     username = data.get('username')
+    #     email = data.get('email')
+    #     password = data.get('password')        
+    #     if not User.objects.filter(username=username).exists():
+    #         User.objects.create_user(username=username, email=email, password=password)        
+    #     data['password'] = make_password(password)
+    #     serializer = self.get_serializer(data=data)
+    #     serializer.is_valid(raise_exception=True)
+    #     self.perform_create(serializer)
 
-        return Response(serializer.data, status=201)
+    #     return Response(serializer.data, status=201)
+
+    
      
 
          
