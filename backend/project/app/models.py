@@ -58,10 +58,11 @@ class IrrigationItem(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)   # Price of item
     stock = models.PositiveIntegerField()              # How many items available
     category = models.CharField(max_length=50)         # e.g., Drip, Sprinkler, Pipes
-    image = models.ImageField(upload_to='images')  # Item image
-    updated_at = models.DateTimeField(auto_now=True)      
+    image = models.ImageField(upload_to='images',default=True,null=True)  # Item image
+        
     manufacturer = models.CharField(max_length=100)
     dealer= models.CharField(max_length=100) 
+    discharge=models.CharField(max_length=20)
 
 
 class owner(models.Model):
