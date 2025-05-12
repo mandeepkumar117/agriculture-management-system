@@ -2,20 +2,23 @@ from rest_framework import viewsets,status
 from .models import *
 from .serializers import *
 from django.contrib.auth.models import User
+from rest_framework.views import APIView
 
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.hashers import check_password
+from rest_framework.parsers import MultiPartParser, FormParser
 
 
 # Create your views her
 
 
 class Fertilizer(viewsets.ModelViewSet):
-
     queryset = fertilizer.objects.all()
     serializer_class = stu_serializers1
+    parser_classes = (MultiPartParser, FormParser)  # ✅ allows multipart/form-data
+
 
 class Pesticide(viewsets.ModelViewSet):
      

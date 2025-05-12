@@ -49,12 +49,12 @@ const Mynavbar = () => {
           </li>
 
           <li className="dropdown">
-            <div onClick={() => toggleDropdown('fertilizer')}>
-              <NavLink to="/fertilizer" onClick={closeMenu}>Fertilizer</NavLink>
+            <div onClick={() => toggleDropdown('fertilizer1')}>
+              <NavLink to="/fertilizer1" onClick={closeMenu}>Fertilizer1</NavLink>
             </div>
-            <ul className={`dropdown-menu ${openDropdown === 'fertilizer' ? 'show' : ''}`}>
-              <li><NavLink to="/fertilizer/organic" onClick={closeMenu}>Organic</NavLink></li>
-              <li><NavLink to="/fertilizer/chemical" onClick={closeMenu}>Chemical</NavLink></li>
+            <ul className={`dropdown-menu ${openDropdown === 'fertilizer1' ? 'show' : ''}`}>
+              <li><NavLink to="/fertilizer1/organic" onClick={closeMenu}>Organic</NavLink></li>
+              <li><NavLink to="/fertilizer1/chemical" onClick={closeMenu}>Chemical</NavLink></li>
             </ul>
           </li>
 
