@@ -8,6 +8,7 @@ import Chemical from "./pages/Chemical";
 import Registration from "./pages/Ragistration";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashbord";
+import Irrigation from "./pages/irrigation";
 
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="registration" element={<Registration/>} />
           <Route path="login" element={<Login/>} />
           <Route path="dashboard" element={<Dashboard/>} />
+          <Route path="irrigation" element={<Irrigation/>} />
         </Route>
       </Routes>
     </BrowserRouter>
