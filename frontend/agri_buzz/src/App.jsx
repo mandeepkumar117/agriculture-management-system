@@ -9,6 +9,9 @@ import Registration from "./pages/Ragistration";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashbord";
 import Irrigation from "./pages/irrigation";
+import Seeds from "./pages/seeds";
+import Pesticide from "./pages/pesticide";
+import Hiring from "./pages/hiring";
 
 
 const App = () => {
@@ -16,6 +19,8 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
+
+
           <Route index element={<Home />} />
           <Route path="fertilizer1" element={<Fertilizer1 />} />
           <Route path="fertilizer/organic" element={<Organic />} />
@@ -24,6 +29,9 @@ const App = () => {
           <Route path="login" element={<Login/>} />
           <Route path="dashboard" element={<Dashboard/>} />
           <Route path="irrigation" element={<Irrigation/>} />
+          <Route path="seeds" element={<Seeds/>} />
+          <Route path="pesticides" element={<Pesticide/>} />
+          <Route path="hiring" element={<Hiring/>} />
         </Route>
       </Routes>
     </BrowserRouter>

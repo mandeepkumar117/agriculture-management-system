@@ -25,16 +25,16 @@ class seeds(models.Model):
     seedname = models.CharField(max_length=100)
     crop_type = models.CharField(max_length=100)
     seed_type = models.CharField(max_length=100)    
-    germination_rate = models.DecimalField(max_digits=5, decimal_places=2)
+    germination_rate = models.CharField(max_length=20)
     seed_treatment = models.CharField(max_length=200)
     quantity = models.CharField(max_length=200)
-    manufacture = models.DecimalField(max_digits=5, decimal_places=2)
+    manufacture = models.CharField(max_length=30)
     spacing = models.CharField(max_length=200)
     harvest_time = models.CharField(max_length=200)
-    yield_per_hectare = models.DecimalField(max_digits=10, decimal_places=2)
+    yield_per_hectare = models.CharField(max_length=20)
     dealer= models.CharField(max_length=100)
     image=models.ImageField(upload_to='images')
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    price = models.IntegerField()
 
 class pesticide(models.Model):
     product_id = models.CharField(primary_key=True,max_length=100)
@@ -44,9 +44,9 @@ class pesticide(models.Model):
     suitablecrop = models.CharField(max_length=200)
     application_method = models.CharField(max_length=200)
     precautions = models.CharField(max_length=200)
-    image=models.ImageField(upload_to='images')
+    image=models.ImageField(upload_to='images',null=True,blank=True)
     quantity = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='irrigation_items/', null=True, blank=True)
+    
     manufacturer = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     dealer= models.CharField(max_length=100) 
@@ -101,13 +101,14 @@ class hiredMachinery(models.Model):
     useraddress= models.CharField(max_length=50)
     
 class labour_registration(models.Model):
-    labour_id = models.AutoField(primary_key=True)
+    labour_id = models.CharField(primary_key=True)
     name = models.CharField(max_length=100)
     contact = models.IntegerField()
     image=models.ImageField(upload_to='images')
     adharno = models.IntegerField(unique=True)
     worktype = models.CharField(max_length=100)
     address = models.CharField(max_length=200)
+    city = models.CharField(max_length=200,null=True)
     
 class hired_labour(models.Model):
     username= models.CharField(max_length=20)

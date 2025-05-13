@@ -73,10 +73,10 @@ const Mynavbar = () => {
             <div onClick={() => toggleDropdown('hiring')}>
               <NavLink to="/hiring" onClick={closeMenu}>Hiring</NavLink>
             </div>
-            <ul className={`dropdown-menu ${openDropdown === 'hiring' ? 'show' : ''}`}>
+            {/* <ul className={`dropdown-menu ${openDropdown === 'hiring' ? 'show' : ''}`}>
               <li><NavLink to="/hiring/labour" onClick={closeMenu}>Labour</NavLink></li>
               <li><NavLink to="/hiring/machine" onClick={closeMenu}>Machine</NavLink></li>
-            </ul>
+            </ul> */}
           </li>
 
           <li className="dropdown">
