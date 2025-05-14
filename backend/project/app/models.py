@@ -69,6 +69,7 @@ class owner(models.Model):
     owner_id = models.CharField(primary_key=True,max_length=100)
     name = models.CharField(max_length=100)
     contact= models.IntegerField()
+    city= models.CharField(max_length=100,null=True)
     address = models.CharField(max_length=100)
 
 class machinery(models.Model):
@@ -124,6 +125,7 @@ class dealer_registration(models.Model):
     contact = models.IntegerField()
     GstNo = models.CharField(max_length=15,unique=True)
     address = models.CharField(max_length=100)
+    city = models.CharField(max_length=100, null=True)
 
 
 class sales_report(models.Model):

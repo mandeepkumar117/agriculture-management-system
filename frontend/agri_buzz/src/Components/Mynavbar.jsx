@@ -104,14 +104,19 @@ const Mynavbar = () => {
           </li>
 
           <li className="dropdown">
-            <div onClick={() => toggleDropdown('agribusiness')}>
-              <NavLink to="/agribusiness" onClick={closeMenu}>Agribusiness</NavLink>
+            <div onClick={() => toggleDropdown('owner')}>
+              <NavLink to="/owner" onClick={closeMenu}>Machine Owner</NavLink>
             </div>
-            <ul className={`dropdown-menu ${openDropdown === 'agribusiness' ? 'show' : ''}`}>
-              <li><NavLink to="/agribusiness/sprays" onClick={closeMenu}>Sprays</NavLink></li>
-              <li><NavLink to="/agribusiness/powders" onClick={closeMenu}>Powders</NavLink></li>
-            </ul>
+           
           </li>
+
+           <li className="dropdown">
+            <div onClick={() => toggleDropdown('machinery')}>
+              <NavLink to="/machinery" onClick={closeMenu}>Machine Registration</NavLink>
+            </div>
+           
+          </li>
+
 
           <li className="dropdown">
             <div onClick={() => toggleDropdown('irrigation')}>
@@ -124,7 +129,7 @@ const Mynavbar = () => {
           </li>
           <li><NavLink to="registration" onClick={closeMenu}>Registration</NavLink></li>
           <li><NavLink to="login" onClick={closeMenu}>Login</NavLink></li>
-          <li><NavLink to="dashbord" onClick={closeMenu}>dashbord</NavLink></li>
+          <li><NavLink to="dealer" onClick={closeMenu}>Dealer Registration</NavLink></li>
         </ul>
 
         <div className="icons-wrapper">
