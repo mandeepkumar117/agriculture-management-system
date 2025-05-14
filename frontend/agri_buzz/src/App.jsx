@@ -12,6 +12,9 @@ import Irrigation from "./pages/irrigation";
 import Seeds from "./pages/seeds";
 import Pesticide from "./pages/pesticide";
 import Hiring from "./pages/hiring";
+import Owner from "./pages/owner";
+import Machinery from "./pages/machinery";
+import Dealer from "./pages/dealer";
 
 
 const App = () => {
@@ -32,6 +35,9 @@ const App = () => {
           <Route path="seeds" element={<Seeds/>} />
           <Route path="pesticides" element={<Pesticide/>} />
           <Route path="hiring" element={<Hiring/>} />
+          <Route path="owner" element={<Owner/>} />
+          <Route path="machinery" element={<Machinery/>} />
+          <Route path="dealer" element={<Dealer/>} />
         </Route>
       </Routes>
     </BrowserRouter>
