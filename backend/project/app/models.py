@@ -57,7 +57,7 @@ class IrrigationItem(models.Model):
     description = models.TextField()                   # Detailed description
     price = models.DecimalField(max_digits=10, decimal_places=2)   # Price of item
     stock = models.PositiveIntegerField()              # How many items available
-    category = models.CharField(max_length=50)         # e.g., Drip, Sprinkler, Pipes
+    category   = models.CharField(max_length=50)         # e.g., Drip, Sprinkler, Pipes
     image = models.ImageField(upload_to='images',default=True,null=True)  # Item image
         
     manufacturer = models.CharField(max_length=100)
@@ -163,6 +163,8 @@ class  userdetail(models.Model):
 class admindetail(models.Model):
     adminname=models.CharField(max_length=30)
     password=models.CharField(max_length=30)
+
+     
 
     
 
