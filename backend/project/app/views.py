@@ -17,7 +17,7 @@ from rest_framework.parsers import MultiPartParser, FormParser
 class Fertilizer(viewsets.ModelViewSet):
     queryset = fertilizer.objects.all()
     serializer_class = stu_serializers1
-    parser_classes = (MultiPartParser, FormParser)  # ✅ allows multipart/form-data
+     # ✅ allows multipart/form-data
 
 
 class Pesticide(viewsets.ModelViewSet):
@@ -42,7 +42,17 @@ class Irrigation(viewsets.ModelViewSet):
 class Owner(viewsets.ModelViewSet):
      
     queryset = owner.objects.all()
-    serializer_class = stu_serializers5
+    serializer_class = stu_serializers5 
+
+    def create(self, request, *args, **kwargs):
+        contact = request.data.get('contact')
+        if owner.objects.filter(contact=contact).exists():
+            return Response(
+                {"contact_number": ["This contact number is already registered."]},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        return super().create(request, *args, **kwargs)
+
 
 class Machinery(viewsets.ModelViewSet):
      
@@ -63,6 +73,18 @@ class Labourregistration(viewsets.ModelViewSet):
      
     queryset = labour_registration.objects.all()
     serializer_class = stu_serializers9
+
+
+    def create(self, request, *args, **kwargs):
+        contact = request.data.get('contact')
+        if labour_registration.objects.filter(contact=contact).exists():
+            return Response(
+                {"contact_number": ["This contact number is already registered."]},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        return super().create(request, *args, **kwargs)
+
+
 class Hiredlabour(viewsets.ModelViewSet):
      
     queryset = hired_labour.objects.all()
@@ -71,6 +93,14 @@ class Dealer(viewsets.ModelViewSet):
      
     queryset = dealer_registration.objects.all()
     serializer_class = stu_serializers11
+    def create(self, request, *args, **kwargs):
+        contact = request.data.get('contact')
+        if dealer_registration.objects.filter(contact=contact).exists():
+            return Response(
+                {"contact_number": ["This contact number is already registered."]},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        return super().create(request, *args, **kwargs)
 
 class Salesreport(viewsets.ModelViewSet):
      
